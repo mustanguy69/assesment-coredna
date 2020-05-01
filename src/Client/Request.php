@@ -30,14 +30,14 @@ class Request
     /**
      * Post method
      *
-     * @param  mixed $url        url to call
-     * @param  mixed $headers    headers to add to the request
-     * @param  mixed $parameters body of the request
+     * @param  mixed $url     url to call
+     * @param  mixed $headers headers to add to the request
+     * @param  mixed $body    body of the request
      * @return void
      */
-    public static function post($url, $headers, $parameters = null)
+    public static function post($url, $headers, $body = null)
     {
-        return self::send(Method::POST, $url, $parameters, $body);
+        return self::send(Method::POST, $url, $headers, $body);
     }
 
         
