@@ -1,6 +1,6 @@
 <?php
 /**
- * Homepage Assesment Core DNA
+ * Homepage Assessment Core DNA
  * 
  * PHP version 7
  *
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <html>
     <head>
-        <title>Core DNA Assesment</title>
+        <title>Core DNA Assessment</title>
         <link rel="stylesheet" 
             href="https://stackpath.bootstrapcdn.com/
             bootstrap/4.3.1/css/bootstrap.min.css" 
@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </head>
     <body>
         <div class="container-fluid">
-            <h3>Core DNA Assesment</h3>
+            <h3>Core DNA Assessment</h3>
             <div class="row">
                 <form class="col-6" action="" method="post">
                     <div class="form-group">

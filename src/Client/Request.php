@@ -1,7 +1,7 @@
 <?php
 
 /**
- * HTTP Client Request - Assesment Core DNA
+ * HTTP Client Request - Assessment Core DNA
  *
  * PHP version 7
  *
@@ -14,7 +14,7 @@
 namespace Client;
 
 /**
- * Request Class - Assesment Core DNA
+ * Request Class - Assessment Core DNA
  *
  * PHP version 7
  *

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * HTTP Client Exception - Assesment Core DNA
+ * HTTP Client Exception - Assessment Core DNA
  * 
  * PHP version 7
  *
@@ -14,7 +14,7 @@
 namespace Client;
 
 /**
- * Class Exception - Assesment Core DNA
+ * Class Exception - Assessment Core DNA
  * 
  * PHP version 7
  *

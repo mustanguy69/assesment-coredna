@@ -1,6 +1,6 @@
 <?php
 /**
- * HTTP Client Methods - Assesment Core DNA
+ * HTTP Client Methods - Assessment Core DNA
  *
  * PHP version 7
  *
@@ -13,7 +13,7 @@
 namespace Client;
 
 /**
- * Method Interface - Assesment Core DNA
+ * Method Interface - Assessment Core DNA
  *
  * PHP version 7
  *

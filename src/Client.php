@@ -1,6 +1,6 @@
 <?php
 /**
- * HTTP Client - Assesment Core DNA
+ * HTTP Client - Assessment Core DNA
  * 
  * PHP version 7
  *
