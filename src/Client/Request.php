@@ -104,16 +104,23 @@ class Request
      */
     public static function send($method, $url, $headers, $body = null)
     {
-        $options = array(
-            'http' => array(
-                'header'  => $headers,
+        $headersRequest = "";
+        foreach ($headers as $key => $header) {
+            if ($key !== "") {
+                $headersRequest .= "" . $key . ": " . $header. "\r\n";
+            }
+        }
+        
+        $options = [
+            'http' => [
                 'method'  => $method,
-                'content' => http_build_query($body),
-            )
-        );
+                'header'  => $headersRequest,
+                'content' => self::jsonEncodeControl($body),
+            ]
+        ];
 
         $context = stream_context_create($options);
-        $result = file_get_contents($url, true, $context);
+        $result = file_get_contents($url, false, $context);
         
         if ($result === false) {
             throw new Exception('Error during calling api');

@@ -17,14 +17,16 @@ $responsePayload = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $headers = $_POST['headers'];
+    $headersKey = $_POST['headers-key'];
+    $headersValues = $_POST['headers-value'];
     $payloadKeys = $_POST['payload-key'];
     $payloadValues = $_POST['payload-value'];
     $method = $_POST['method'];
     $url = $_POST['url'];
 
     $payload = array_combine($payloadKeys, $payloadValues);
-
+    $headers = array_combine($headersKey, $headersValues);
+    
     if ($method == "POST") {
         $response = Client\Request::post($url, $headers, $payload);
     } elseif ($method == "GET") {
@@ -47,10 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <head>
         <title>Core DNA Assessment</title>
         <link rel="stylesheet" 
-            href="https://stackpath.bootstrapcdn.com/
-            bootstrap/4.3.1/css/bootstrap.min.css" 
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/
-            1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
             crossorigin="anonymous">
     </head>
     <body>
@@ -74,10 +74,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <option value="OPTIONS">OPTIONS</option>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <div class="form-row align-items-center">
                         <label for="headers">Custom Headers</label>
-                        <textarea class="form-control" name="headers"
-                            id="headers" placeholder="Custom Headers"></textarea>
+                        <div class="input-group">
+                            <input type="text" class="form-control col-3 mb-2"
+                                id="headers" name="headers-key[]" 
+                                    placeholder="key"/>  
+                            <div class="input-group-append col-9">
+                                <input type="text" class="form-control mb-2"
+                                    name="headers-value[]" placeholder="value"/>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="form-control col-3 mb-2"
+                             id="headers" name="headers-key[]" placeholder="key"/>  
+                            <div class="input-group-append col-9">
+                                <input type="text" class="form-control mb-2"
+                                    name="headers-value[]" placeholder="value"/>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="form-control col-3 mb-2"
+                             id="headers" name="headers-key[]" placeholder="key"/>  
+                            <div class="input-group-append col-9">
+                                <input type="text" class="form-control mb-2" 
+                                    name="headers-value[]" placeholder="value"/>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-row align-items-center">
                         <label>Payload (associative array)</label>
